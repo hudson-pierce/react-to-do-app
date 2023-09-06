@@ -4,6 +4,8 @@ import './AddButton.css';
 
 export const AddButton: React.FC = () => {
     return (
-        <Button variant='contained'>Add Item</Button>
+        <Button variant='contained' className='button'>
+            Add Item
+        </Button>
     )
 }
