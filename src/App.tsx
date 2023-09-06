@@ -1,16 +1,13 @@
 import './App.css';
 import { ListContainer } from './components/ListContainer/ListContainer';
 import { Header } from './components/Header/Header';
+import { AddButton } from './components/Button/AddButton';
 
 const App = () => {
   return (
     <div className='app'>
-      <Header title='My To-Do List:' />
-      <ListContainer>
-          <div>
-            This is a test
-          </div>
-      </ListContainer>
+      <Header title="My Tasks"/>
+      <ListContainer/>
     </div>
   );
 }
