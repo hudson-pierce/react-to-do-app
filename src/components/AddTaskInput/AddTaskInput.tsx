@@ -4,6 +4,6 @@ import { TextField } from '@mui/material';
 
 export const AddTaskInput: React.FC = () => {
     return (
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" className='textfield'/>
+        <TextField id="outlined-basic" label="Give your task a name" variant="outlined" className='textfield'/>
     )
 }
