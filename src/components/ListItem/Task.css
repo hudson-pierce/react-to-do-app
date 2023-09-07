@@ -1,0 +1,34 @@
+.list-item {
+    background-color: aliceblue;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+.list-item:hover {
+    background-color: aliceblue;
+}
+
+.delete-button:hover {
+    color: red;
+}
+
+.edit-button:hover {
+    color: blue;
+}
+
+.checkmark-icon.completed {
+    margin-right: 8px;
+    color: green;
+}
+
+.checkmark-icon.not-completed {
+    margin-right: 8px;
+    color: gray;
+}
+
+.text {
+    flex-grow: 1
+}

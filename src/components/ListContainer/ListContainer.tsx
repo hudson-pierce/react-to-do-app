@@ -1,23 +1,49 @@
 import React, { useState } from 'react';
-import { ListItem } from '../ListItem/ListItem';
 import './ListContainer.css';
-import { AddButton } from '../Button/AddButton';
 import { AddTaskInput } from '../AddTaskInput/AddTaskInput';
-import { AddTaskForm } from '../AddTaskForm/AddTaskForm';
+import { Task } from '../ListItem/Task';
 
 type Props = {
 }
 
-interface ListItem {
-    title: string
-}
-
 export const ListContainer: React.FC<Props> = ({}) => {
+    const [tasks, setTasks] = useState<{ title: string; completed: boolean }[]>([]);
+
+    const addTask = (taskName: string) => {
+        setTasks([...tasks, { title: taskName, completed: false }]);
+    };
+
+    const deleteTask = (index: number) => {
+        const updatedTasks = [...tasks];
+        updatedTasks.splice(index, 1);
+        setTasks(updatedTasks);
+    };
+
+    const editTask = (index: number, newTitle: string) => {
+        const updatedTasks = [...tasks];
+        updatedTasks[index].title = newTitle;
+        setTasks(updatedTasks);
+    };
+
+    const toggleComplete = (index: number) => {
+        const updatedTasks = [...tasks];
+        updatedTasks[index].completed = !updatedTasks[index].completed;
+        setTasks(updatedTasks);
+    };
+
     return (
         <div className='list-container'>
-            <AddTaskForm/>
-            <ListItem title="Item1" completed={false}/>
-            <ListItem title="Item2" completed={false}/>
+            <AddTaskInput onSubmit={addTask} />
+            {tasks.map((task, index) => (
+                <Task
+                    key={index}
+                    title={task.title}
+                    completed={task.completed}
+                    onDelete={() => deleteTask(index)}
+                    onEdit={(newTitle) => editTask(index, newTitle)}
+                    onToggleComplete={() => toggleComplete(index)}
+                />
+            ))}
         </div>
     );
 }
