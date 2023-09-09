@@ -64,8 +64,6 @@ export const Task: React.FC<Props> = ({
             ) : (
                 <>
                     <IconButton
-                        // className={`checkmark-icon`}
-                        // make color gray if not completed and green if completed
                         className={`checkmark-icon ${completed ? 'completed' : 'not-completed'}`}
                         edge="end"
                         aria-label="complete"
