@@ -3,10 +3,7 @@ import './ListContainer.css';
 import { AddTaskInput } from '../AddTaskInput/AddTaskInput';
 import { Task } from '../ListItem/Task';
 
-type Props = {
-}
-
-export const ListContainer: React.FC<Props> = ({}) => {
+export const ListContainer: React.FC = () => {
     const [tasks, setTasks] = useState<{ title: string; completed: boolean }[]>([]);
 
     const addTask = (taskName: string) => {

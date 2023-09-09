@@ -40,11 +40,6 @@ export const Task: React.FC<Props> = ({
         }
     };
 
-    const handleCancelEdit = () => {
-        setNewTitle(title);
-        setIsEditing(false);
-    };
-
     const handleToggleComplete = () => {
         onToggleComplete();
     };
