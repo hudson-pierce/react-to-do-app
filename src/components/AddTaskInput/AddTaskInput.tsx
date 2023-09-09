@@ -28,7 +28,7 @@ export const AddTaskInput: React.FC<Props> = ({ onSubmit }) => {
                 className='textfield'
                 value={taskName}
                 onChange={handleInputChange}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyPress}
             />
         </div>
     );
